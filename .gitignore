@@ -1,0 +1,3 @@
+/.venv/
+config_bot.py
+*.log
