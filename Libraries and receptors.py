@@ -31,13 +31,13 @@ good = [
     ['соль', 90],
     ['крупа', 100]
 ]
-# good_count = {}
-# for name, quantity in good:
-#     if name in good_count:
-#         good_count[name] += quantity
-#     else:
-#         good_count[name] = quantity
-# print(good_count)
+good_count = {}
+for name, quantity in good:
+    if name in good_count:
+        good_count[name] += quantity
+    else:
+        good_count[name] = quantity
+print(good_count)
 # ------------------------------------------
 # то же решение с помощью модуля collections
 
@@ -53,7 +53,7 @@ print(good_count)
 # my_pets = OrderedDict()
 # my_pets['собака'] = 'Жучка'
 # my_pets['мышка'] = 'Норушка'
-# my_pets['кошла'] = 'Мурка'
+# my_pets['кошка'] = 'Мурка'
 # my_pets['попугай'] = 'Кеша'
 # my_pets['рыбка'] = 'Геннадий'
 # my_pets['таракан'] = 'Коля'
@@ -62,8 +62,8 @@ print(good_count)
 # for k, v in my_pets.items():
 #     print(k, v)
 # --------------------------------------------
-from functools import reduce
-# умножение/сложение списка
-my_numbers = [1, 2, 3, 4, 5, 6]
-print(reduce(lambda x, y: x * y, my_numbers))
-print(sum(my_numbers))  # сложение списка функциональным способом
+# from functools import reduce
+# # умножение/сложение списка
+# my_numbers = [1, 2, 3, 4, 5, 6]
+# print(reduce(lambda x, y: x * y, my_numbers))
+# print(sum(my_numbers))  # сложение списка функциональным способом
