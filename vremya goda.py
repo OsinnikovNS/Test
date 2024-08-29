@@ -24,7 +24,7 @@ month_dict = {'Зима': [12, 1, 2],
               'Лето': [6, 7, 8],
               'Осень': [9, 10, 11]}
 
-month_num = int(input('Введите порядковый номер месяца в году (1..12): '))
+month_num = int(input('Введите порядковый номер месяца в году (1 ... 12): '))
 if month_num in range(1, 13):
     for i in month_dict.items():
         if month_num in i[1]:
