@@ -1,0 +1,4 @@
+# https://vkhost.github.io/ пример получения access token
+
+TOKEN = "vk1.a.oiLG5a6cib3tzRxyU_c65P57Ndluy55rEk6SRNVHnW7Vb9pPlVdZUS40oD9ocnWD1-00W56iui729flFVM44d9I1eHQtLM6m6P_S27UJtATci6BiM5XmezwumCY3v5ZjiU_9huzaLdNkw7nw9l4LzymdmDhh8X9bTAt2nIHpQIypaYwo-2q5ab9KIjQpbpbKzv1bMs6fFxD_or2kbj2WLQ"
+GROUP_ID = 226295234

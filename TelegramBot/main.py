@@ -2,6 +2,8 @@
 преобразованиями, включая пикселизацию, преобразование в ASCII-арт, инверсию цветов, зеркальное отражение,
 преобразование в тепловую карту, создание стикеров и многое другое. Кроме того, он предоставляет возможности
 для развлечений, такие как отправка случайных шуток, комплиментов и подбрасывание монетки. """
+#!/usr/bin/python
+# -*- coding: utf8 -*-
 import telebot
 from PIL import Image, ImageOps
 import io
@@ -32,8 +34,7 @@ def resize_image(image: Image.Image, new_width: int = 100) -> Image.Image:
 
 
 def grayify(image: Image.Image) -> Image.Image:
-    """Преобразование в оттенки серого
-    """
+    """Преобразование в оттенки серого"""
     return image.convert("L")
 
 
@@ -188,7 +189,7 @@ def handle_photo(message: telebot.types.Message):
     :param message: (telebot.types.Message) Сообщение с фотографией от пользоваиеля
     """
     bot.reply_to(message,
-                 "Я получил вашу фотографию! Пожалуйста, выберите, что бы вы хотите с ней сделать?",
+                 "Я получил Ваше изображение! Выберите, что бы Вы хотите с ней сделать?",
                  reply_markup=get_options_keyboard())
     user_states[message.chat.id] = {'photo': message.photo[-1].file_id}
 
@@ -198,14 +199,14 @@ def get_options_keyboard():
     :return (types.InlineKeyboardMarkup) клава с кнопками для выбора оброботки
     """
     keyboard = types.InlineKeyboardMarkup()
-    pixelate_btn = types.InlineKeyboardButton("Pixelate", callback_data="pixelate")  # кнопка для pixelate
-    ascii_btn = types.InlineKeyboardButton("ASCII Art", callback_data="ascii")  # кнопка для ascii
-    invert_btn = types.InlineKeyboardButton("Invert Colors", callback_data="invert")  # кнопка для invert
-    mirror_horizont_btn = types.InlineKeyboardButton("Mirror horizontal",
+    pixelate_btn = types.InlineKeyboardButton("Пикселизировать", callback_data="pixelate")  # кнопка для pixelate
+    ascii_btn = types.InlineKeyboardButton("ASCII-творчество", callback_data="ascii")  # кнопка для ascii
+    invert_btn = types.InlineKeyboardButton("Инвертировать цвета", callback_data="invert")  # кнопка для invert
+    mirror_horizont_btn = types.InlineKeyboardButton("Зеркально по горизонтали",
                                                      callback_data="mirror_horizontal")  # кнопка для mirror horizontal
-    mirror_vert_btn = types.InlineKeyboardButton("Mirror Vertical",
+    mirror_vert_btn = types.InlineKeyboardButton("Зеркально по вертикали",
                                                  callback_data="mirror_vertical")  # кнопка для mirror vertical
-    heatmap_btn = types.InlineKeyboardButton("Heatmap", callback_data="heatmap")  # кнопка для тепловой карты
+    heatmap_btn = types.InlineKeyboardButton("Теплые цвета", callback_data="heatmap")  # кнопка для тепловой карты
     sticker_btn = types.InlineKeyboardButton("Преобразовать в стикер", callback_data="sticker")  # кнопка для стикера
     random_joke_btn = types.InlineKeyboardButton("Случайная шутка", callback_data="random_joke")  # кнопка для шутки
     compliment_btn = types.InlineKeyboardButton("Случайный комплимент",
@@ -230,7 +231,7 @@ def callback_query(call: telebot.types.CallbackQuery):
         bot.answer_callback_query(call.id, "Converting your image to ASCII art...")
         bot.send_message(call.message.chat.id, "Введите набор символов для ASCII-арта, "
                                                "начиная с самых темных к самым светлым,"
-                                               "например ЖХУИЪЬою:,"
+                                               "например @%#*+=-:,"
                                                "\nИли напишите 'default' для использования стандартного набора символов")
         bot.register_next_step_handler(call.message, ask_for_ascii_chairs)
 
@@ -282,7 +283,7 @@ def pixelate_and_send(message: telebot.types.Message):
 
     image_stream = io.BytesIO(downloaded_file)
     image = Image.open(image_stream)
-    pixelated = pixelate_image(image, 20)
+    pixelated = pixelate_image(image, 5)
 
     output_stream = io.BytesIO()
     pixelated.save(output_stream, format="JPEG")

@@ -1,4 +1,5 @@
-import os
+# !/usr/bin/python
+# -*- coding: utf8 -*-
 
 import telebot
 from PIL import Image
@@ -127,7 +128,7 @@ def pixelate_and_send(message):
 
     image_stream = io.BytesIO(downloaded_file)
     image = Image.open(image_stream)
-    pixelated = pixelate_image(image, 20)
+    pixelated = pixelate_image(image, 5)
 
     output_stream = io.BytesIO()
     pixelated.save(output_stream, format="JPEG")
