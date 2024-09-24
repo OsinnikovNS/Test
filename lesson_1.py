@@ -18,6 +18,6 @@ cv2.putText(photo, 'Urban', (100, 150), cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 255, 
 
 
 cv2.imshow('Photo', photo)
-cv2.waitKey(999) # 0 - бесконечный цикл ожидания, 999 - милисекунд
+cv2.waitKey(0) # 0 - бесконечный цикл ожидания, 999 - милисекунд
 
 

@@ -7,7 +7,7 @@
 # out = im.resize((300, 400)) # изменение размера картинки
 # out.show()
 # ---------------------------------------------------
-
+"""TODO"""
 # -*- coding: utf-8 -*-
 
 # Пример использования сторонней библиотеки на примере Pillow
@@ -50,5 +50,5 @@ class PostCardMaker:
 
 
 if __name__ == '__main__':
-    maker = PostCardMaker(name='Маша')
+    maker = PostCardMaker(name='foto_1.jpg')
     maker.make(resize=True)

@@ -1,3 +1,4 @@
+"""TODO"""
 import cv2
 
 img = cv2.imread('Images/foto_1.jpg')

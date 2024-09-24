@@ -1,5 +1,6 @@
 # !/usr/bin/python
 # -*- coding: utf8 -*-
+# начальный вариант, требует развития
 
 import telebot
 from PIL import Image
