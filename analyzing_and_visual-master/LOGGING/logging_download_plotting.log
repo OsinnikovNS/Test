@@ -1,0 +1,5 @@
+INFO:root:Объект "Ticker" yfinance.Ticker object <MSFT>
+INFO:root:В DataFrame добавлено свойство "Moving_Average" <class 'pandas.core.frame.DataFrame'>
+INFO:root:Выводится среднее значение колонки "Close": 420.09700164794924
+INFO:root:Значение колебаний: 8.803053246616486
+INFO:root:Объект <class 'pandas.core.frame.DataFrame'> экспортирован в файл
